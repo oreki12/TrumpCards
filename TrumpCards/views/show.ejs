@@ -1,0 +1,24 @@
+<%-include('partials/head')%>
+<%-include('partials/nav')%>
+    <div class="container">
+        <h1>More from : <%= trumpcard.name %></h1>
+        <div class="card mb-3">
+            <img class="card-img-top" src="<%= trumpcard.img %>" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><%= trumpcard.name %></h5>
+              <p class="card-text"><%= trumpcard.info %></p>
+              <a name="detail" class="btn btn-outline-warning rounded float-right"
+                  href="/trumpcards/<%=trumpcard.id%>/edit" role="button">Edit</a>
+              <form  action="/trumpcards/<%=trumpcard.id%>?_method=DELETE" method="POST">
+                <button style="margin-right: 10px;" class="btn btn-outline-danger rounded float-right" type="submit">Delete</button>
+              </form>   
+              <form  action="/trumpcards" method="GET">
+                <button style="margin-right: 10px;" class="btn btn-outline-primary rounded float-right" type="submit">Back</button>
+              </form>  
+              <p class="card-text"><small class="text-muted"> Your ID is: <%= trumpcard.id%></small></p>
+            </div>
+        </div>
+        
+    </div>
+
+<%-include('partials/footer')%>

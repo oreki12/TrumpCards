@@ -1,0 +1,19 @@
+<%-include('partials/head')%>
+<%-include('partials/nav')%>
+    <div class="container">
+      <br>
+      <h1>All cards</h1>
+      <hr>
+        <% for(let cards of trumpcards){ %>
+              <div class="card cards" style="width: 18rem;">
+                <img class="card-img-top" src="<%= cards.img %>" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><%= cards.name %></h5>
+                  <a name="detail" class="btn btn-outline-success rounded float-right"
+                  href="/trumpcards/<%= cards.id %>" role="button">Details</a>
+                </div>
+              </div>       
+        <% } %>
+    </div>
+
+<%-include('partials/footer')%>

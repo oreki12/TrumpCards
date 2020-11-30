@@ -1,0 +1,27 @@
+<%-include('partials/head')%>
+<%-include('partials/nav')%>
+    <div class="container">
+        <br>
+        <h1>create new card</h1>
+        <hr>
+        <form action="/trumpcards" method="POST">
+            <section>
+                <label for="name">Name:</label>
+                <input class="form-control" type="text" id="name" placeholder="Character Name" name="name">
+            </section>
+            <section>
+                <label for="img">Image URL:</label>
+                <input class="form-control" type="url" name="img" id="img" placeholder="https://example.com"
+                pattern="https://.*" required>
+            </section>
+            <section>
+                <label for="comment">information:</label>
+                <br>
+                <textarea class="form-control" name="info" id="comment" cols="30" rows="5"></textarea>
+            </section>
+            <br>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+<%-include('partials/footer')%>

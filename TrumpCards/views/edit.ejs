@@ -1,0 +1,33 @@
+<%-include('partials/head')%>
+<%-include('partials/nav')%>
+
+    <div class="container">
+        <div class="container">
+            <br>
+            <h1>Edit this card</h1>
+            <hr>
+            <form action="/trumpcards/<%=trumpcard.id%>?_method=PATCH" method="POST">
+                <section>
+                    <label for="name">Name:</label>
+                    <input class="form-control" type="text" id="name" placeholder="Character Name" name="name" value="<%= trumpcard.name %>">
+                </section>
+                <section>
+                    <label for="img">Image URL:</label>
+                    <input class="form-control" type="url" name="img" id="img" placeholder="https://example.com"
+                    pattern="https://.*" required value="<%= trumpcard.img %>">
+                </section>
+                <section>
+                    <label for="comment">information:</label>
+                    <br>
+                    <textarea class="form-control" name="info" id="comment" cols="30" rows="5"><%= trumpcard.info %></textarea>
+                </section>
+                <br>
+                <form  action="/trumpcards" method="GET">
+                    <button style="margin-right: 10px;" class="btn btn-outline-info rounded float-left " type="submit">Back</button>
+                  </form>
+                <button class="btn btn-outline-success rounded float-left">Save</button>
+            </form>
+        </div>
+    </div>
+
+<%-include('partials/footer')%>
